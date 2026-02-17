@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #00f5ff, #008cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0f1c;
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #00f5ff, #008cff);
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 140, 255, 0.4);
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: #a855f7;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.role-text {
+  transition: color 0.3s ease;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+.project-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease;
+  min-height: 280px;
+  padding: 40px;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  border-color: rgba(168, 85, 247, 0.5);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #a855f7, #06b6d4);
+  transition: left 0.4s ease;
+}
+
+.project-card:hover::before {
+  left: 0;
+}
+
+.project-btn {
+  background: linear-gradient(90deg, #a855f7, #06b6d4);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4);
+}
+
+/* Glowing Button Effects */
+/* High-Intensity Neon Glow */
+.btn-glow {
+  position: relative;
+  background: black;
+  color: white;
+  z-index: 1;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.5), 0 0 20px rgba(0, 140, 255, 0.3);
+}
+
+.btn-glow::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, #00f5ff, #008cff);
+  z-index: -1;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.btn-glow:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 0 20px rgba(0, 245, 255, 0.6),
+    0 0 40px rgba(0, 140, 255, 0.4),
+    0 0 60px rgba(168, 85, 247, 0.2);
+}
+
+.btn-glow:hover::before {
+  opacity: 1;
+  filter: brightness(1.2);
+}
+
+
+/* Animated Border Glow */
+.btn-outline-glow {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.btn-outline-glow:hover {
+  border-color: #a855f7;
+  color: #fff;
+  background: rgba(168, 85, 247, 0.15);
+  box-shadow: 
+    0 0 15px rgba(168, 85, 247, 0.5),
+    inset 0 0 10px rgba(168, 85, 247, 0.3);
+  transform: translateY(-3px);
+  text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+.btn-outline-glow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.btn-outline-glow:hover::after {
+  left: 100%;
+}
+
+/* Skill Tag Glow (Cyan) */
+.skill-tag-glow {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  color: #d1d5db; /* gray-300 */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  cursor: default;
+}
+
+.skill-tag-glow:hover {
+  border-color: #06b6d4;
+  color: #fff;
+  background: rgba(6, 182, 212, 0.15);
+  box-shadow: 
+    0 0 15px rgba(6, 182, 212, 0.5),
+    inset 0 0 10px rgba(6, 182, 212, 0.3);
+  transform: translateY(-2px);
+  text-shadow: 0 0 5px rgba(255,255,255,0.5);
+}
+
+.skill-tag-glow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.skill-tag-glow:hover::after {
+  left: 100%;
+}
