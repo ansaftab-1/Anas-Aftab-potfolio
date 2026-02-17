@@ -133,7 +133,7 @@ const Hero = () => {
                         <MagneticButton href="#contact">
                             Contact Me
                         </MagneticButton>
-                        <a href="src/assets/Anas cv(org).pdf" target="_blank" rel="noopener noreferrer"
+                        <a href="/Anas-cv.pdf" target="_blank" rel="noopener noreferrer"
                             className="px-9 py-4 rounded-xl btn-outline-glow text-lg font-semibold text-white hover:bg-white/10 transition-colors">
                             Resume
                         </a>
