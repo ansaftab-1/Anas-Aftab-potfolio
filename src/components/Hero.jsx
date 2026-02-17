@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import MagneticButton from "./MagneticButton";
 import { useRef } from "react";
+import profileImage from "../assets/ans1.jpg";
 
 const texts = [
     { text: "CS Student", color: "#a855f7" },
@@ -152,7 +153,7 @@ const Hero = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
                             <img 
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
-                                src="/src/assets/ans1.jpg" 
+                                src={profileImage} 
                                 alt="Anas Aftab" 
                             />
                         </div>
