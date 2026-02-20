@@ -10,8 +10,6 @@ const texts = [
 ];
 
 const Hero = () => {
-
-
     const [textIndex, setTextIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
@@ -25,7 +23,22 @@ const Hero = () => {
         offset: ["start start", "end start"]
     });
     
-    const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
+    // Mouse Parallax effect
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    
+    const handleMouseMove = (e) => {
+        const { clientX, clientY } = e;
+        const { innerWidth, innerHeight } = window;
+        const x = (clientX - innerWidth / 2) / 25;
+        const y = (clientY - innerHeight / 2) / 25;
+        setMousePos({ x, y });
+    };
+
+    const resetMouse = () => {
+        setMousePos({ x: 0, y: 0 });
+    };
+    
+    const yParallax = useTransform(scrollYProgress, [0, 1], [0, -100]);
     const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0.3]);
 
     useEffect(() => {
@@ -90,7 +103,13 @@ const Hero = () => {
     }; 
 
     return (
-        <section ref={ref} id="home" className="min-h-screen flex items-center px-6 pt-24 md:pt-20 overflow-hidden">
+        <section 
+            ref={ref} 
+            id="home" 
+            onMouseMove={handleMouseMove}
+            onMouseLeave={resetMouse}
+            className="min-h-screen flex items-center px-6 pt-24 md:pt-20 overflow-hidden"
+        >
             <div className="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
                 
                 {/* Motion container applies the stagger effect */}
@@ -99,6 +118,14 @@ const Hero = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
+                    animate={{ 
+                        x: mousePos.x, 
+                        y: mousePos.y,
+                        rotateX: -mousePos.y * 0.1,
+                        rotateY: mousePos.x * 0.1
+                    }}
+                    transition={{ type: "spring", stiffness: 100, damping: 20 }}
+                    style={{ perspective: 1000 }}
                     className="col-span-1 space-y-6 md:space-y-10"
                 >
 
@@ -118,7 +145,22 @@ const Hero = () => {
                             >
                                 {displayedText}
                             </span>
-                            <span className="cursor blink">|</span>
+                            <motion.span 
+                                className="inline-block ml-3 w-1.5 h-[0.9em] rounded-full translate-y-1"
+                                style={{
+                                    background: "linear-gradient(to bottom, #00f5ff, #a855f7, #ff3366, #ffcc00)",
+                                }}
+                                animate={{
+                                    scaleY: [1, 1.2, 1],
+                                    opacity: [1, 0.6, 1],
+                                    filter: ["hue-rotate(0deg)", "hue-rotate(360deg)"]
+                                }}
+                                transition={{
+                                    scaleY: { duration: 1, repeat: Infinity, ease: "easeInOut" },
+                                    opacity: { duration: 0.8, repeat: Infinity, ease: "easeInOut" },
+                                    filter: { duration: 3, repeat: Infinity, ease: "linear" }
+                                }}
+                            />
                         </motion.h2>
                     </div>
 
@@ -143,8 +185,8 @@ const Hero = () => {
                 {/* Right - DEV glass card with parallax effect */}
                 <motion.div 
                     initial={{ x: 100, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    style={{ y, opacity }}
+                    animate={{ x: -mousePos.x * 0.5, y: -mousePos.y * 0.5 + 0 }}
+                    style={{ y: yParallax, opacity }}
                     transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
                     className="relative hidden md:block"
                 >
