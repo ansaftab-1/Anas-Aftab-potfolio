@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# GTA VI Source
+gtavi-source/node_modules
+gtavi-source/dist

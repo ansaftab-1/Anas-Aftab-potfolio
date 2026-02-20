@@ -38,7 +38,7 @@ const Projects = () => {
                                 <span className="px-3 py-1 bg-white/10 rounded-full">Vite</span>
                                 <span className="px-3 py-1 bg-white/10 rounded-full">Tailwind CSS</span>
                             </div>
-                            <a href="https://grandatutovii.netlify.app" target="_blank" rel="noopener noreferrer"
+                            <a href="/projects/gtavi/index.html" target="_blank" rel="noopener noreferrer"
                                 className="project-btn px-6 py-2 rounded-lg inline-block">
                                 Live →
                             </a>
