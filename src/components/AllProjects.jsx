@@ -12,10 +12,10 @@ const AllProjects = () => {
             category: "small"
         },
         {
-            title: "Number Guessing Game",
-            description: "Fun interactive guessing game built with HTML, CSS & JavaScript",
-            tags: ["HTML", "CSS", "JavaScript"],
-            link: "https://number-gusesses.netlify.app",
+            title: "GTA-VI",
+            description: "Immersive landing page concept for Grand Theft Auto VI, featuring cinematic animations and a premium Vice City aesthetic.",
+            tags: ["React.js", "TailwindCSS", "Framer Motion", "Responsive"],
+            link: "https://gta-vi-ans.netlify.app",
             category: "complete"
         },
         {
