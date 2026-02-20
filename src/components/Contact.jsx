@@ -7,7 +7,7 @@ const Contact = () => {
             <motion.div 
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 className="max-w-4xl mx-auto glass p-10 rounded-3xl"
             >
