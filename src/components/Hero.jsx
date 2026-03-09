@@ -166,8 +166,8 @@ const Hero = () => {
 
                     <div className="overflow-hidden pb-1">
                         <motion.p variants={itemVariant} className="text-xl sm:text-2xl text-gray-300 max-w-xl leading-relaxed">
-                            I create dynamic, responsive websites<br className="hidden sm:inline" />
-                            where innovation meets design.
+                            Code with character.... <br className="hidden sm:inline" />
+                            Design with intent.
                         </motion.p>
                     </div>
 
