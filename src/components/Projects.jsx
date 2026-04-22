@@ -1,31 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+
 
 const Projects = () => {
     return (
         <section id="projects" className="py-24 px-6 bg-black/40">
             <div className="max-w-7xl mx-auto">
-                <motion.div 
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    transition={{ duration: 0.6 }}
+                <div 
                     className="flex justify-between items-end mb-16"
                 >
                     <h2 className="text-4xl font-bold gradient-text">Projects</h2>
                     <Link to="/projects" className="text-gray-400 hover:text-cyan-400 transition-colors flex items-center gap-2 group">
                         View all <span className="group-hover:translate-x-1 transition-transform">~~&gt;</span>
                     </Link>
-                </motion.div>
+                </div>
 
                 <div className="grid md:grid-cols-3 gap-14">
                     {/* Project 1 */}
-                    <motion.div 
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.3 }}
-                        transition={{ duration: 0.5, delay: 0 }}
+                    <div 
                         className="project-card"
                     >
                         <div className="relative z-10">
@@ -44,14 +36,10 @@ const Projects = () => {
                                 Live →
                             </a>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Project 2 */}
-                    <motion.div 
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.3 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
+                    <div 
                         className="project-card"
                     >
                         <div className="relative z-10">
@@ -70,14 +58,10 @@ const Projects = () => {
                                 Live →
                             </a>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Project 3 */}
-                    <motion.div 
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.3 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
+                    <div 
                         className="project-card"
                     >
                         <div className="relative z-10">
@@ -96,7 +80,7 @@ const Projects = () => {
                                 Live →
                             </a>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

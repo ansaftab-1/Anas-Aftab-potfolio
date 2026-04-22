@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+
 
 const MagneticButton = ({ children, className = "", href, ...props }) => {
     const ref = useRef(null);
@@ -22,10 +22,9 @@ const MagneticButton = ({ children, className = "", href, ...props }) => {
     const { x, y } = position;
 
     const content = (
-        <motion.div
-            style={{ x, y }}
-            transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-            className={`relative rounded-xl btn-glow overflow-hidden ${className}`}
+        <div
+            style={{ transform: `translate(${x}px, ${y}px)` }}
+            className={`relative rounded-xl btn-glow overflow-hidden transition-transform duration-200 ${className}`}
         >
             <div className="relative z-10 px-9 py-4 text-white text-lg font-semibold shadow-lg group overflow-hidden">
                 <div className="relative flex flex-col items-center">
@@ -40,7 +39,7 @@ const MagneticButton = ({ children, className = "", href, ...props }) => {
                     </span>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 
     // If it's a link

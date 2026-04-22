@@ -38,7 +38,7 @@ const AllProjects = () => {
     const smallProjects = projects.filter(p => p.category === "small");
 
     return (
-        <div className="bg-[#0a0f1c] text-white font-inter min-h-screen">
+        <div className="text-white font-inter min-h-screen">
             <Navbar />
             <div className="pt-24 px-6 max-w-7xl mx-auto">
                 <div className="mb-12">
