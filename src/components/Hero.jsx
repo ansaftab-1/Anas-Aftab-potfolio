@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import MagneticButton from "./MagneticButton";
 import { useRef } from "react";
 import profileImage from "../assets/ans1.png";
+import cvFile from "../assets/Anas Resume.pdf";
 
 const texts = [
     { text: "CS Student", color: "#a855f7" },
@@ -124,7 +125,7 @@ const Hero = () => {
                         <MagneticButton href="#contact">
                             Contact Me
                         </MagneticButton>
-                        <a href="/Anas-cv.pdf" target="_blank" rel="noopener noreferrer"
+                        <a href={cvFile} target="_blank" rel="noopener noreferrer"
                             className="px-9 py-4 rounded-xl btn-outline-glow text-lg font-semibold text-white hover:bg-white/10 transition-colors">
                             Resume
                         </a>
