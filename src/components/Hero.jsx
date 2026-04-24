@@ -115,7 +115,7 @@ const Hero = () => {
                     </div>
 
                     <div className="overflow-hidden pb-1">
-                        <p className="text-xl sm:text-2xl text-gray-300 max-w-xl leading-relaxed">
+                        <p className="text-xl sm:text-2xl max-w-xl leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                             Code with character.... <br className="hidden sm:inline" />
                             Design with intent.
                         </p>
@@ -139,7 +139,7 @@ const Hero = () => {
                         <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full blur-md opacity-30 group-hover:opacity-60 transition duration-500"></div>
                         
                         {/* Profile Image */}
-                        <div className="relative rounded-full overflow-hidden w-64 h-64 sm:w-72 sm:h-72 ring-4 ring-[#0a0f1c] bg-[#0a0f1c]">
+                        <div className="relative rounded-full overflow-hidden w-64 h-64 sm:w-72 sm:h-72 ring-4 ring-offset-4 ring-cyan-500/20 bg-transparent" style={{ ringColor: 'var(--border-color)', backgroundColor: 'var(--bg-secondary)' }}>
                             <img 
                                 className="w-full h-full object-cover object-[15%_40%] transform group-hover:scale-110 transition-transform duration-700" 
                                 src={profileImage} 

@@ -66,12 +66,17 @@ const BackgroundAnimation = () => {
     }, []);
 
     return (
-        <div className="fixed inset-0 z-[-10] overflow-hidden bg-gradient-to-br from-[#0f111a] via-[#1a1b35] to-[#120e24]">
+        <div 
+            className="fixed inset-0 z-[-10] overflow-hidden transition-colors duration-300"
+            style={{
+                background: `linear-gradient(to bottom right, var(--bg-grad-from), var(--bg-grad-via), var(--bg-grad-to))`
+            }}
+        >
             {/* Subtle Grid Background to match image exactly */}
             <div 
-                className="absolute inset-0 opacity-30"
+                className="absolute inset-0 opacity-20"
                 style={{
-                    backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
+                    backgroundImage: 'linear-gradient(var(--border-color) 1px, transparent 1px), linear-gradient(90deg, var(--border-color) 1px, transparent 1px)',
                     backgroundSize: '50px 50px'
                 }}
             ></div>
